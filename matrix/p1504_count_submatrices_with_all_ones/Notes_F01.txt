@@ -1,0 +1,24 @@
+a given 1 element can always represent at least itself, and the Mx1 and 1xN rectangles, where N is the consecutive number of 1's on the X axis (left) and M is the # of consec 1's on the Y axis (up).
+
+
+in order for a given 1 element to extend larger rectangles, it must be that its upper-left adjacent element represents some amount of rectangles. it can also only extend as many rectangles as its vertical and horizontal consecutive 1's allow.
+
+so, the minimum of v_consec_1s (M) and h_consec_1s (N) is as far as we will ever need to search in the up-left direction. this can also be shortened if we find a 0 element anywhere up-left within that bound.
+
+
+1 + 2 + 1 + 2
+
+2(x) + 1(y) + 1(xy) + (1(upleft distance) + 1(constant)) * min(remaining length of longer side, corresponding M or N of upleft element)
+
+
+1, 0
+
+when we reach the end of one length, but not another, we can check the values of M and N in the up-left element we stopped in to determine how many more rectangles we are extending.
+
+when we go up and left, we are extending this many rectangles to the right = min(new_n - dist, rep_rects_upleft[N_VAL])
+when we go up and left, we are extending this many rectangles downwards    = min(new_m - dist, rep_rects_upleft[M_VAL])
+
+for the first layer, we extend as many rects as the value of new_n, plus the value of new_m
+for the next layer, we may extend as many rects to the right as new_n - 1, but may only extend as many rectangles as the layer allows, its own N_VAL
+
+additionally, if we find an upleft element that represents no rects, we would extend no more rects from that layer
