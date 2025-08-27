@@ -12,3 +12,6 @@ Overall, I think I had a lot of good ideas solving this problem, but my implemen
 
 ### Comments on Diagrams
 diagram_01 is a compilation of some the initial drawings that I made when figuring out the logic of my program. diagram_02 is one of the test cases that was failed; I began into a trace to try to determine what edge cases I was missing or where my logic was faulty.
+
+### Attempt 2 (Solve)
+I didn't want to do the daily today because it was scary so I tried to resolve this one. Coming in my background knowledge was very helpful, but I also made sure not to look at any solutions, besides looking over this document again. It took longer to solve than it likely should've because I made a few syntax mistakes that I shouldn't have in my haste, but overall programming this solution went smoothly.
